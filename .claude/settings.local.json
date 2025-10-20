@@ -1,7 +1,35 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir -p .github/workflows)"
+      "Bash(mkdir -p .github/workflows)",
+      "Bash(git remote add origin https://github.com/HuangWwenGang/HuangWwenGang.github.io.git)",
+      "Bash(git push -u origin master)",
+      "Bash(git add .github/workflows/deploy.yml)",
+      "Bash(git commit -m \"Fix: Add write permissions to GitHub Actions\")",
+      "Bash(git push)",
+      "Bash(git fetch origin)",
+      "Bash(cat .gitmodules)",
+      "Bash(git add themes/hollow)",
+      "Bash(git rm --cached themes/hollow)",
+      "Bash(git add themes/hollow/_config.yml)",
+      "Bash(git add -f themes/hollow/_config.yml)",
+      "Bash(git commit -m \"Fix: Add hollow theme files properly for GitHub Actions deployment\")",
+      "Bash(git fetch origin gh-pages)",
+      "Bash(git ls-tree origin/main)",
+      "Bash(git push origin --delete main)",
+      "Bash(git remote prune origin)",
+      "Bash(git checkout origin/gh-pages -- index.html)",
+      "Bash(git ls-tree -r HEAD themes/hollow)",
+      "Bash(cat _config.yml)",
+      "Bash(npx hexo version)",
+      "Bash(npx hexo config theme)",
+      "Bash(npm run clean)",
+      "Bash(git clone https://github.com/zchen9/hexo-theme-hollow.git themes/hollow)",
+      "Bash(npm run build)",
+      "Bash(git ls-tree -r origin/gh-pages)",
+      "Bash(git commit -m \"Trigger redeploy\")",
+      "Bash(rm -rf themes/carbon)",
+      "Bash(git add -A)"
     ],
     "deny": [],
     "ask": []
