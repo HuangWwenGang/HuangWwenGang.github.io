@@ -5,6 +5,9 @@ on:
     branches:
       - master  # 当推送到 master 分支时触发
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
