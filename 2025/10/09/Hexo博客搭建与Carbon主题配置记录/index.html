@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="本文记录了使用 Hexo 搭建博客并配置 Carbon 主题的完整过程，包括遇到的问题和解决方案。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!-- Title -->
+    
+    <title>Hexo博客搭建与Carbon主题配置记录 | Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Hexo博客搭建与Carbon主题配置记录
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>本文记录了使用 Hexo 搭建博客并配置 Carbon 主题的完整过程，包括遇到的问题和解决方案。</p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文记录了使用 Hexo 搭建博客并配置 Carbon 主题的完整过程，包括遇到的问题和解决方案。</p>
+<h2 id="初始环境"><a href="#初始环境" class="headerlink" title="初始环境"></a>初始环境</h2><ul>
+<li>操作系统: Windows</li>
+<li>Node.js 版本: v20.17.0</li>
+<li>已有 Carbon 主题文件夹位于 <code>themes/carbon</code></li>
+</ul>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="1-发现问题：缺少完整的-Hexo-博客结构"><a href="#1-发现问题：缺少完整的-Hexo-博客结构" class="headerlink" title="1. 发现问题：缺少完整的 Hexo 博客结构"></a>1. 发现问题：缺少完整的 Hexo 博客结构</h3><p>初始状态下，只有一个 <code>themes</code> 文件夹包含 Carbon 主题，但缺少 Hexo 博客的核心文件结构（如 <code>source/</code>, <code>scaffolds/</code>, <code>_config.yml</code> 等）。</p>
+<p><strong>解决方案</strong>: 需要先初始化一个完整的 Hexo 博客项目。</p>
+<h3 id="2-安装-Hexo-CLI"><a href="#2-安装-Hexo-CLI" class="headerlink" title="2. 安装 Hexo CLI"></a>2. 安装 Hexo CLI</h3><p>首先全局安装 Hexo 命令行工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>这一步顺利完成，安装了 53 个依赖包。</p>
+<h3 id="3-初始化-Hexo-博客"><a href="#3-初始化-Hexo-博客" class="headerlink" title="3. 初始化 Hexo 博客"></a>3. 初始化 Hexo 博客</h3><p>创建新的 Hexo 博客项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><strong>遇到的警告</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm warn EBADENGINE Unsupported engine &#123;</span><br><span class="line">  package: &#x27;hexo@8.0.0&#x27;,</span><br><span class="line">  required: &#123; node: &#x27;&gt;=20.19.0&#x27; &#125;,</span><br><span class="line">  current: &#123; node: &#x27;v20.17.0&#x27;, npm: &#x27;10.8.2&#x27; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>虽然有引擎版本警告，但初始化成功完成。</p>
+<h3 id="4-配置-Carbon-主题"><a href="#4-配置-Carbon-主题" class="headerlink" title="4. 配置 Carbon 主题"></a>4. 配置 Carbon 主题</h3><h4 id="4-1-复制主题文件"><a href="#4-1-复制主题文件" class="headerlink" title="4.1 复制主题文件"></a>4.1 复制主题文件</h4><p>将 Carbon 主题复制到博客的 themes 目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r ../themes/carbon themes/</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-安装主题依赖"><a href="#4-2-安装主题依赖" class="headerlink" title="4.2 安装主题依赖"></a>4.2 安装主题依赖</h4><p>Carbon 主题需要特定的渲染器，根据其 README 说明安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-coffeescript --save</span><br><span class="line">npm install hexo-renderer-jade --save</span><br></pre></td></tr></table></figure>
+
+<p><strong>遇到的警告</strong>:</p>
+<ul>
+<li><code>hexo-renderer-jade</code> 已废弃，建议使用 <code>hexo-renderer-pug</code></li>
+<li><code>hexo-renderer-coffeescript</code> 已废弃</li>
+<li>一些依赖包存在安全漏洞</li>
+</ul>
+<p>尽管有这些警告，主题的基本功能仍然可用。</p>
+<h4 id="4-3-修改配置文件"><a href="#4-3-修改配置文件" class="headerlink" title="4.3 修改配置文件"></a>4.3 修改配置文件</h4><p>编辑 <code>_config.yml</code>，将主题从默认的 <code>landscape</code> 改为 <code>carbon</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">carbon</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-启动服务遇到的问题"><a href="#5-启动服务遇到的问题" class="headerlink" title="5. 启动服务遇到的问题"></a>5. 启动服务遇到的问题</h3><h4 id="问题-1-Hexo-8-0-0-版本兼容性问题"><a href="#问题-1-Hexo-8-0-0-版本兼容性问题" class="headerlink" title="问题 1: Hexo 8.0.0 版本兼容性问题"></a>问题 1: Hexo 8.0.0 版本兼容性问题</h4><p>首次尝试启动服务时遇到错误：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error [ERR_REQUIRE_ESM]: require() of ES Module ... strip-ansi/index.js ... not supported.</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因</strong>: Hexo 8.0.0 要求 Node.js &gt;&#x3D; 20.19.0，而当前环境是 v20.17.0，存在模块加载方式的兼容性问题。</p>
+<p><strong>解决方案</strong>: 降级到 Hexo 7.3.0：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo@7.3.0 --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="问题-2-成功启动"><a href="#问题-2-成功启动" class="headerlink" title="问题 2: 成功启动"></a>问题 2: 成功启动</h4><p>降级后再次启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>成功输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO  Validating config</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<h2 id="最终配置总结"><a href="#最终配置总结" class="headerlink" title="最终配置总结"></a>最终配置总结</h2><h3 id="成功运行的环境"><a href="#成功运行的环境" class="headerlink" title="成功运行的环境"></a>成功运行的环境</h3><ul>
+<li>Hexo 版本: 7.3.0</li>
+<li>Node.js: v20.17.0</li>
+<li>主题: Carbon</li>
+<li>访问地址: <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></li>
+</ul>
+<h3 id="关键依赖"><a href="#关键依赖" class="headerlink" title="关键依赖"></a>关键依赖</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^7.3.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-coffeescript&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-jade&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.5.0&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><strong>版本兼容性</strong>: 如果 Node.js 版本低于 20.19.0，建议使用 Hexo 7.x 版本</li>
+<li><strong>主题依赖</strong>: Carbon 主题依赖的渲染器已废弃，长期使用建议考虑迁移到其他主题或更新渲染器</li>
+<li><strong>安全漏洞</strong>: 项目存在 8 个安全漏洞，如果是生产环境，建议运行 <code>npm audit fix</code> 修复</li>
+</ol>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动本地服务器</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建新文章</span></span><br><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 部署到远程</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，成功搭建了一个使用 Carbon 主题的 Hexo 博客。主要遇到的问题是版本兼容性，通过降级 Hexo 版本得到解决。虽然主题依赖的一些渲染器已废弃，但不影响基本使用。</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/Hexo/">#Hexo</a> <a href="/tags/博客搭建/">#博客搭建</a> <a href="/tags/Carbon主题/">#Carbon主题</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2025-10-09
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E7%8E%AF%E5%A2%83"><span class="toc-text">初始环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B"><span class="toc-text">配置过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%EF%BC%9A%E7%BC%BA%E5%B0%91%E5%AE%8C%E6%95%B4%E7%9A%84-Hexo-%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84"><span class="toc-text">1. 发现问题：缺少完整的 Hexo 博客结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-Hexo-CLI"><span class="toc-text">2. 安装 Hexo CLI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo-%E5%8D%9A%E5%AE%A2"><span class="toc-text">3. 初始化 Hexo 博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE-Carbon-%E4%B8%BB%E9%A2%98"><span class="toc-text">4. 配置 Carbon 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%A4%8D%E5%88%B6%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6"><span class="toc-text">4.1 复制主题文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98%E4%BE%9D%E8%B5%96"><span class="toc-text">4.2 安装主题依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">4.3 修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">5. 启动服务遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-1-Hexo-8-0-0-%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">问题 1: Hexo 8.0.0 版本兼容性问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-2-%E6%88%90%E5%8A%9F%E5%90%AF%E5%8A%A8"><span class="toc-text">问题 2: 成功启动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93"><span class="toc-text">最终配置总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E8%BF%90%E8%A1%8C%E7%9A%84%E7%8E%AF%E5%A2%83"><span class="toc-text">成功运行的环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E4%BE%9D%E8%B5%96"><span class="toc-text">关键依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>
