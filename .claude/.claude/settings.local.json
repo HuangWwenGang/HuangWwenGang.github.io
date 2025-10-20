@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Administrator/blog/**)",
+      "Bash(rm publish.bat)",
+      "Bash(git branch -a -vv)",
+      "Bash(git push origin --delete dependabot/npm_and_yarn/hexo-8.0.0)",
+      "Bash(hexo new \"测试自动部署功能\")",
+      "Bash(git add .)",
+      "Bash(git commit -m \"添加测试文章: 测试自动部署功能\")",
+      "Bash(git push origin master)",
+      "Bash(git pull origin master --rebase)",
+      "Bash(git add .claude/.claude/settings.local.json)",
+      "Bash(git commit --amend --no-edit)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
