@@ -90,4 +90,6 @@ echo   3. 访问博客: https://daisuki.you
 echo   4. 记得强制刷新浏览器 (Ctrl+Shift+R)
 echo.
 
+pause
+
 endlocal
