@@ -20,7 +20,9 @@
       "Bash(cat public/index.html)",
       "Bash(cat public/css/base.css)",
       "Bash(chmod +x publish.sh)",
-      "Bash(npm install hexo-generator-index-pin-top --save)"
+      "Bash(npm install hexo-generator-index-pin-top --save)",
+      "Bash(git rm \"source/_posts/测试自动部署功能.md\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\n删除测试文章\n\n- 移除\"测试自动部署功能\"测试文章\n- 该文章仅用于测试自动部署流程，现已完成测试\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
