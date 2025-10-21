@@ -11,7 +11,13 @@
       "Bash(git push origin master)",
       "Bash(git pull origin master --rebase)",
       "Bash(git add .claude/.claude/settings.local.json)",
-      "Bash(git commit --amend --no-edit)"
+      "Bash(git commit --amend --no-edit)",
+      "Bash(git fetch origin)",
+      "Bash(git pull origin master)",
+      "Bash(curl -s \"https://api.github.com/repos/HuangWwenGang/HuangWwenGang.github.io/actions/runs?per_page=3\")",
+      "Bash(hexo clean)",
+      "Bash(hexo generate)",
+      "Bash(cat public/index.html)"
     ],
     "deny": [],
     "ask": []
