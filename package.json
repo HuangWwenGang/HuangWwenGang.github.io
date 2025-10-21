@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "publish": "node -e \"const msg = process.argv[1] || 'Update blog'; require('child_process').execSync(`git add . && git commit -m \\\"${msg}\\\" && git push origin master`, {stdio: 'inherit'})\""
   },
   "hexo": {
     "version": "7.3.0"

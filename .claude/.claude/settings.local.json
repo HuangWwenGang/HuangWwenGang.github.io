@@ -18,7 +18,8 @@
       "Bash(hexo clean)",
       "Bash(hexo generate)",
       "Bash(cat public/index.html)",
-      "Bash(cat public/css/base.css)"
+      "Bash(cat public/css/base.css)",
+      "Bash(chmod +x publish.sh)"
     ],
     "deny": [],
     "ask": []
