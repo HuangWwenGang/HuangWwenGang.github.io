@@ -17,7 +17,8 @@
       "Bash(curl -s \"https://api.github.com/repos/HuangWwenGang/HuangWwenGang.github.io/actions/runs?per_page=3\")",
       "Bash(hexo clean)",
       "Bash(hexo generate)",
-      "Bash(cat public/index.html)"
+      "Bash(cat public/index.html)",
+      "Bash(cat public/css/base.css)"
     ],
     "deny": [],
     "ask": []
