@@ -22,7 +22,8 @@
       "Bash(chmod +x publish.sh)",
       "Bash(npm install hexo-generator-index-pin-top --save)",
       "Bash(git rm \"source/_posts/测试自动部署功能.md\")",
-      "Bash(git commit -m \"$(cat <<''EOF''\n删除测试文章\n\n- 移除\"测试自动部署功能\"测试文章\n- 该文章仅用于测试自动部署流程，现已完成测试\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\n删除测试文章\n\n- 移除\"测试自动部署功能\"测试文章\n- 该文章仅用于测试自动部署流程，现已完成测试\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"修复部署脚本\n\n- 移除导致nul文件错误的chcp命令\n- 简化脚本逻辑\n- 添加quick-publish.bat快速部署脚本\n- 修复first-blog.md的目录导航\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\")"
     ],
     "deny": [],
     "ask": []
